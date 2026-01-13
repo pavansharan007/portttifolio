@@ -1,13 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { LocateIcon, LocationEditIcon } from "lucide-react";
+import { IoLocationOutline } from "react-icons/io5";
 
-// Animation Variants for re-use
+// Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }, // Custom cubic-bezier easing
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -15,9 +17,7 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1, // Stagger individual skill cards
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -30,7 +30,6 @@ function About() {
           name: "React",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
         },
-
         {
           name: "Tailwind CSS",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
@@ -114,26 +113,32 @@ function About() {
       name: "Vignan's Institute Of Information and Technology",
       year: "2023 - 2027",
       type: "B.Tech",
-      location: "Duvvada",
+      location: "Duvvada, Visakhapatnam",
+      image:
+        "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=600&auto=format&fit=crop", // Dummy College Image
     },
     {
       name: "RGUKT Srikakulam",
       year: "2021 - 2023",
       type: "Intermediate",
-      location: "Srikakulam",
+      location: "Srikakulam, AP",
+      image:
+        "https://images.unsplash.com/photo-1541339907198-e08759dfc3ef?q=80&w=600&auto=format&fit=crop", // Dummy College Image
     },
     {
       name: "Bhashyam High School",
       year: "2016 - 2021",
       type: "SSC",
-      location: "Gajuwaka",
+      location: "Gajuwaka, Visakhapatnam",
+      image:
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop", // Dummy College Image
     },
   ];
 
   return (
     <div className="bg-orange-50 min-h-screen pb-20 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6 pt-20 md:pt-32">
-        {/* HERO SECTION - Initial reveal */}
+        {/* HERO SECTION */}
         <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
           <h1
             className="text-7xl md:text-8xl lg:text-9xl font-medium text-black mb-8"
@@ -142,13 +147,14 @@ function About() {
             About.
           </h1>
           <p className="max-w-7xl text-lg md:text-xl text-dirtt opacity-80 leading-relaxed border-l-4 border-dirtt pl-6">
-            I’m a passionate <strong className="text-black">Full-Stack Developer</strong> who loves
-            turning ideas into seamless digital experiences. I build interfaces
-            that are both visually appealing and highly functional.
+            I’m a passionate{" "}
+            <strong className="text-black">Full-Stack Developer</strong> who
+            loves turning ideas into seamless digital experiences. I build
+            interfaces that are both visually appealing and highly functional.
           </p>
         </motion.div>
 
-        {/* TECH STACK SECTION - Scroll reveal with stagger */}
+        {/* INVENTORY SECTION */}
         <section className="mt-32">
           <motion.div
             initial="hidden"
@@ -208,14 +214,14 @@ function About() {
           </div>
         </section>
 
-        {/* EDUCATION SECTION - Scroll reveal cards */}
-        <section className="mt-40">
+        {/* EDUCATION SECTION - Timeline Style */}
+        <section className="mt-40 relative">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="flex items-center gap-4 mb-12"
+            className="flex items-center gap-4 mb-20"
           >
             <h2
               className="text-3xl md:text-5xl"
@@ -226,35 +232,72 @@ function About() {
             <div className="h-[2px] flex-grow bg-dirtt opacity-20"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {educations.map((edu, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.7,
-                  delay: index * 0.2,
-                  ease: "easeOut",
-                }}
-                className="p-8 border-2 border-dirtt rounded-3xl bg-orange-50/100 flex flex-col justify-between hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all"
-              >
-                <div>
-                  <span
-                    className="inline-block px-3 py-1 bg-dirtt text-white text-xs rounded-full mb-4"
-                    style={{ fontFamily: "Minecraft" }}
-                  >
-                    {edu.year}
-                  </span>
-                  <h4 className="text-2xl font-bold mb-2">{edu.type}</h4>
-                  <p className="text-dirtt opacity-70">{edu.name}</p>
-                </div>
-                <p className="mt-6 text-sm font-bold text-dirtt uppercase tracking-tighter">
-                  {edu.location}
-                </p>
-              </motion.div>
-            ))}
+          <div className="relative">
+            {/* THE CONNECTING LINE 
+              Mobile: Fixed to the left (left-4)
+              Desktop: Centered (md:left-1/2)
+            */}
+            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-[3px] bg-dirtt opacity-30"></div>
+
+            <div className="space-y-16 md:space-y-24">
+              {educations.map((edu, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className={`relative flex flex-col md:flex-row items-center justify-between w-full ${
+                    index % 2 === 0 ? "md:flex-row-reverse" : ""
+                  }`}
+                >
+                  {/* TIMELINE NODE (DOT)
+                    Mobile: Fixed to the line on the left
+                    Desktop: Centered on the line
+                  */}
+                  <div className="absolute left-[10px] md:left-1/2 transform md:-translate-x-1/2 w-5 h-5 bg-[#f1902f] rounded-full border-4 border-orange-50 z-20 shadow-sm"></div>
+
+                  {/* Content Card */}
+                  <div className="w-full md:w-[45%] pl-12 md:pl-0">
+                    <div className="group overflow-hidden border-2 border-black rounded-[2rem] bg-white shadow-sm hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300">
+                      {/* Image Header */}
+                      <div className="h-40 md:h-48 w-full overflow-hidden bg-stone-200">
+                        <img
+                          src={edu.image}
+                          alt={edu.name}
+                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                        />
+                      </div>
+
+                      <div className="p-6 md:p-8">
+                        <div className="mb-4">
+                          <span
+                            className="inline-block px-4 py-1 bg-[#f1902f] text-black text-[10px] font-bold uppercase tracking-widest rounded-full"
+                            style={{ fontFamily: "Minecraft" }}
+                          >
+                            {edu.year}
+                          </span>
+                        </div>
+                        <h4 className="text-xl md:text-2xl font-black mb-1 text-black uppercase">
+                          {edu.type}
+                        </h4>
+                        <p className="text-dirtt font-medium mb-4 italic opacity-80">
+                          {edu.name}
+                        </p>
+
+                        <div className="flex items-center gap-2 text-xs font-bold text-stone-500 uppercase tracking-tighter">
+                          <IoLocationOutline className="w-6 h-6 text-[#f1902f]" />
+                          {edu.location}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Spacer for desktop alignment */}
+                  <div className="hidden md:block md:w-[45%]"></div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
       </div>
