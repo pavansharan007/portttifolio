@@ -13,23 +13,14 @@ function Icepoot() {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const subm = async (data) => {
-    try {
-      await Icepooting.createData(data);
-      alert("✅ Block Added to the Inventory!");
-      reset();
-    } catch (err) {
-      alert("❌ Failed to craft message.");
-    }
-  };
-
+  
   // Modern SaaS styling using your existing palette
   const inputBase =
     "bg-orange-50 border-2 border-black rounded-xl text-dirtt placeholder:text-stone-400 focus:bg-orange-50 focus:ring-2 focus:ring-[#f1902f] transition-all duration-200 py-3 px-4";
 
   return (
     <div className="w-full">
-      <form onSubmit={handleSubmit(subm)} className="space-y-5">
+      <form onSubmit={handleSubmit()} className="space-y-5">
         {/* Row 1: Name and Email */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col">
