@@ -115,7 +115,7 @@ function About() {
       type: "B.Tech",
       location: "Duvvada, Visakhapatnam",
       image:
-        "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=600&auto=format&fit=crop", // Dummy College Image
+        "https://res.cloudinary.com/dlqirm28c/image/upload/v1768315111/vignans-institute-of-information-technology-visakhapatnam-256383_wlcvo5.webp",
     },
     {
       name: "RGUKT Srikakulam",
@@ -123,16 +123,8 @@ function About() {
       type: "Intermediate",
       location: "Srikakulam, AP",
       image:
-        "https://images.unsplash.com/photo-1541339907198-e08759dfc3ef?q=80&w=600&auto=format&fit=crop", // Dummy College Image
-    },
-    {
-      name: "Bhashyam High School",
-      year: "2016 - 2021",
-      type: "SSC",
-      location: "Gajuwaka, Visakhapatnam",
-      image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop", // Dummy College Image
-    },
+        "https://res.cloudinary.com/dlqirm28c/image/upload/v1768315162/pylon_vnkqwr.webp",
+    }
   ];
 
   return (
