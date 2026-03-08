@@ -37,7 +37,7 @@ function Home() {
   ];
   return (
     <div
-      className="grid grid-cols-1 md:grid-cols-2 items-center bg-orange-50 overflow-hidden"
+      className="grid grid-cols-1 md:grid-cols-2 items-center bg-transparent overflow-hidden"
       style={{ minHeight: "100vh" }}
     >
       {/* Left Content Section */}
@@ -47,24 +47,22 @@ function Home() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-20 md:pt-0"
       >
-        <div className="text-dirtt">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl  leading-none">
-            Hello
+        <div className="text-cyber-textPrimary">
+          <div className="cyber-label mb-2">// INIT SEQUENCE STARTED</div>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl leading-none font-bold text-cyber-accentGold tracking-widest uppercase">
+            Hello_
           </h1>
 
           <div className="mt-4">
-            <p className="text-2xl md:text-3xl text-stone font-extralight leading-tight">
-              I'm <br />
-              <span
-                className="text-dirtt text-4xl md:text-5xl lg:text-6xl block mt-2"
-                style={{ fontFamily: "Minecraft" }}
-              >
-                Pavan Saran
+            <p className="text-2xl md:text-3xl text-cyber-textSecondary font-mono leading-tight uppercase">
+              I'M <br />
+              <span className="text-cyber-textPrimary text-4xl md:text-5xl lg:text-6xl block mt-2 font-bold tracking-widest uppercase">
+                PAVAN SARAN
               </span>
             </p>
           </div>
 
-          <div className="flex items-center h-12 mt-4 border-l-4 border-[#f1902f] pl-4">
+          <div className="flex items-center h-12 mt-4 border-l-2 border-cyber-accentCyan pl-4">
             <AnimatePresence mode="wait">
               <motion.p
                 key={roles[index]}
@@ -72,14 +70,14 @@ function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.5 }}
-                className="text-xl md:text-2xl text-stone font-medium"
+                className="text-xl md:text-2xl text-cyber-accentCyan font-mono uppercase tracking-widest font-bold"
               >
-                {roles[index]}
+                &gt; {roles[index]}
               </motion.p>
             </AnimatePresence>
           </div>
 
-          <p className="text-sm md:text-base max-w-md mt-4 opacity-80">
+          <p className="text-sm md:text-base max-w-md mt-4 text-cyber-textSecondary font-mono">
             Crafting responsive, user-friendly websites with clean code and
             creative solutions.
           </p>
@@ -94,7 +92,7 @@ function Home() {
                 <Link
                   to={item.Link}
                   target="_blank" // Opens in new tab
-                  className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#f1902f] bg-orange-50 rounded-xl hover:bg-[#D6C285] hover:border-dirtt transition-all duration-300 text-dirtt"
+                  className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 border border-cyber-border bg-cyber-bgSecondary rounded-sm hover:border-cyber-accentGold hover:text-cyber-accentGold hover:shadow-[0_0_8px_rgba(245,166,35,0.4)] transition-all duration-300 text-cyber-textPrimary"
                 >
                   {item.icon}
                 </Link>
@@ -124,7 +122,7 @@ function Home() {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             src="https://res.cloudinary.com/dwmpdbsej/image/upload/v1754761720/sad-minecraft-steve-4og50ydu6voqlnry-removebg-preview_nqh43x.png"
             alt="Minecraft Steve"
-            className="w-[70%] md:w-[80%] h-auto object-contain drop-shadow-2xl"
+            className="w-[70%] md:w-[80%] h-auto object-contain drop-shadow-[0_0_15px_rgba(0,212,255,0.4)]"
           />
         </div>
       </motion.div>

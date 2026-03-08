@@ -30,7 +30,7 @@ function Contact() {
   ];
 
   return (
-    <div className="bg-orange-50 min-h-screen pb-20">
+    <div className="bg-transparent min-h-screen pb-20 text-cyber-textPrimary">
       <div className="max-w-7xl mx-auto px-6 pt-20 md:pt-32">
         {/* Header Section */}
         <motion.div
@@ -39,15 +39,15 @@ function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
+          <div className="cyber-label">// MODULE: COMMUNICATIONS</div>
           <h1
-            className="text-6xl md:text-8xl lg:text-9xl font-medium text-black"
-            style={{ fontFamily: "Minecraft" }}
+            className="text-6xl md:text-8xl lg:text-9xl font-bold text-cyber-accentGold uppercase tracking-widest"
           >
-            Contact.
+            Contact_
           </h1>
-          <p className="text-dirtt/60 text-lg md:text-xl mt-4 max-w-xl">
-            Ready to start a new project or just want to say hi? My inbox is
-            always open for new adventures.
+          <p className="text-cyber-textSecondary font-mono text-lg md:text-xl mt-4 max-w-xl border-l-2 border-cyber-accentCyan pl-6 uppercase">
+            // Ready to start a new project or just want to say hi? My inbox is
+            open for new connections.
           </p>
         </motion.div>
 
@@ -59,8 +59,8 @@ function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-5 space-y-4"
           >
-            <h2 className="text-sm uppercase tracking-[0.2em] font-bold text-stone-500 mb-6">
-              Social Channels
+            <h2 className="text-sm uppercase tracking-[0.2em] font-mono font-bold text-cyber-textSecondary mb-6">
+              &gt; Social Channels
             </h2>
             {contacts.map((contact, index) => (
               <motion.div
@@ -71,16 +71,16 @@ function Contact() {
                 <Link
                   to={contact.src}
                   target="_blank"
-                  className="flex items-center p-4 bg-orange-100/50 border-2 border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none transition-all duration-200"
+                  className="cyber-card flex items-center p-4 transition-all duration-200 hover:border-cyber-accentCyan border-b-[3px] border-b-cyber-accentCyan hover:shadow-[0_0_15px_rgba(0,212,255,0.2)]"
                 >
-                  <div className="flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 bg-orange-50 border-2 border-black rounded-xl group-hover:bg-[#D6C285] transition-colors">
+                  <div className="flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 bg-cyber-bgTertiary border border-cyber-border rounded-sm group-hover:border-cyber-accentCyan group-hover:text-cyber-accentCyan transition-colors text-cyber-textSecondary">
                     {contact.icon}
                   </div>
                   <div className="ml-5">
-                    <p className="text-xs font-bold uppercase text-stone-400 tracking-wider">
+                    <p className="text-xs font-bold uppercase text-cyber-textSecondary font-mono tracking-wider">
                       {contact.name}
                     </p>
-                    <p className="text-xs md:text-base lg:text-lg font-medium text-dirtt truncate max-w-[200px] md:max-w-xs">
+                    <p className="text-xs md:text-base lg:text-lg font-bold text-cyber-textPrimary truncate max-w-[200px] md:max-w-xs uppercase tracking-widest mt-1">
                       {contact.content}
                     </p>
                   </div>
@@ -94,22 +94,23 @@ function Contact() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="lg:col-span-7 bg-orange-50/100 border-2 border-black rounded-[2rem] p-8 lg:p-12 shadow-[12px_12px_0px_0px_rgba(241,144,47,0.2)]"
+            className="lg:col-span-7 cyber-card p-8 lg:p-12 border-b-[3px] border-b-cyber-accentGold relative overflow-hidden"
           >
-            <div className="mb-8">
+            {/* Decorative background grid in panel */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#f5a623_1px,transparent_1px)] [background-size:20px_20px]"></div>
+            
+            <div className="mb-8 relative z-10">
               <h3
-                className="text-3xl lg:text-4xl text-black flex items-center gap-3"
-                style={{ fontFamily: "Minecraft" }}
+                className="text-3xl lg:text-4xl text-cyber-accentGold font-bold uppercase tracking-widest flex items-center gap-3"
               >
                 Leave a Message <Send className="w-6 h-6" />
               </h3>
-              <p className="text-stone-500 mt-2">
-                Drop your details below and I'll get back to you within 24
-                hours.
+              <p className="text-cyber-textSecondary font-mono mt-2 uppercase tracking-wide text-sm">
+                // Drop your details below and I'll respond within 24 hours.
               </p>
             </div>
 
-            <div className=" rounded-2xl p-2">
+            <div className="relative z-10 w-full">
               <Icepoot />
             </div>
           </motion.div>

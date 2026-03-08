@@ -56,12 +56,12 @@ function Projects() {
   ];
 
   return (
-    <div className="bg-orange-50 min-h-screen relative overflow-hidden px-6 py-20 lg:px-24">
+    <div className="bg-transparent text-cyber-textPrimary min-h-screen relative overflow-hidden px-6 py-20 lg:px-24">
       {/* Background Pattern */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(#000 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(#00d4ff 1px, transparent 1px)`,
           backgroundSize: "30px 30px",
         }}
       ></div>
@@ -72,14 +72,14 @@ function Projects() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
+          <div className="cyber-label">// MODULE: ASSETS_AND_PROJECTS</div>
           <h1
-            className="text-6xl md:text-8xl lg:text-9xl font-medium text-black mb-4"
-            style={{ fontFamily: "Minecraft" }}
+            className="text-6xl md:text-8xl lg:text-9xl font-bold text-cyber-accentGold mb-4 tracking-widest uppercase"
           >
-            Projects
+            Projects_
           </h1>
-          <p className="text-xl md:text-2xl italic text-dirtt/70 mb-20 border-l-4 border-dirtt pl-6">
-            “Exploring new biomes through my work.”
+          <p className="text-xl md:text-2xl text-cyber-textSecondary font-mono mb-20 border-l-2 border-cyber-accentCyan pl-6 uppercase tracking-widest">
+            // Exploring new sectors through my work.
           </p>
         </motion.div>
 
@@ -97,15 +97,14 @@ function Projects() {
             >
               {/* Image Column */}
               <div className="w-full lg:w-3/5 group">
-                <div className="relative border-4 border-black rounded-2xl overflow-hidden bg-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-transform duration-500 group-hover:-translate-y-2 group-hover:translate-x-1">
+                <div className="cyber-card relative overflow-hidden transition-transform duration-500 hover:shadow-[0_0_20px_rgba(245,166,35,0.2)] hover:border-cyber-accentGold p-0">
                   <img
                     src={project.src}
                     alt={project.title}
-                    className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal"
                   />
                   <div
-                    className="absolute top-4 left-4 bg-black text-white px-4 py-1 rounded-full text-sm font-bold tracking-widest"
-                    style={{ fontFamily: "Minecraft" }}
+                    className="absolute top-4 left-4 bg-cyber-bgPrimary border border-cyber-border text-cyber-accentCyan px-3 py-1 text-xl font-bold font-mono tracking-widest"
                   >
                     {project.no}
                   </div>
@@ -115,13 +114,13 @@ function Projects() {
               {/* Content Column */}
               <div className="w-full lg:w-2/5 space-y-6">
                 <div>
-                  <h3 className="text-dirtt/60 font-bold uppercase tracking-widest text-sm mb-2">
-                    {project.type}
+                  <h3 className="text-cyber-accentCyan font-bold uppercase tracking-widest text-sm mb-2 font-mono">
+                    [{project.type}]
                   </h3>
-                  <h2 className="text-4xl md:text-5xl font-black text-black mb-4">
+                  <h2 className="text-4xl md:text-5xl font-bold text-cyber-textPrimary mb-4 uppercase tracking-widest">
                     {project.title}
                   </h2>
-                  <p className="text-lg text-gray-700 leading-relaxed">
+                  <p className="text-lg text-cyber-textSecondary leading-relaxed font-mono">
                     {project.desc}
                   </p>
                 </div>
@@ -131,7 +130,7 @@ function Projects() {
                   {project.stacks.map((stack) => (
                     <span
                       key={stack}
-                      className="px-3 py-1 bg-orange-100 border border-black/10 rounded-md text-xs font-bold text-dirtt"
+                      className="px-2 py-1 bg-cyber-bgTertiary border border-cyber-border text-xs font-mono font-bold text-cyber-textPrimary uppercase tracking-wider"
                     >
                       {stack}
                     </span>
@@ -143,14 +142,14 @@ function Projects() {
                   <Link
                     to={project.live}
                     target="_blank"
-                    className="flex-1 lg:flex-none flex items-center justify-center gap-2 px-8 py-3 bg-black text-white rounded-xl font-bold hover:bg-dirtt transition-colors"
+                    className="cyber-btn-primary flex-1 lg:flex-none flex items-center justify-center gap-2 px-8 py-3 tracking-widest"
                   >
-                    View Live <FaExternalLinkAlt className="text-xs" />
+                    Live_ <FaExternalLinkAlt className="text-xs" />
                   </Link>
                   <Link
                     to={project.github}
                     target="_blank"
-                    className="flex items-center justify-center w-14 h-14 border-2 border-black rounded-xl hover:bg-white transition-colors"
+                    className="cyber-btn-secondary flex items-center justify-center w-14 h-14"
                   >
                     <FaGithub className="text-2xl" />
                   </Link>

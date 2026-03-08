@@ -8,6 +8,8 @@ import About from './compnts/About.jsx'
 import Skills from './compnts/Skills.jsx'
 import Projects from './compnts/Projects.jsx'
 import Contact from './compnts/Contact.jsx'
+import { ThemeProvider } from './context/ThemeContext.jsx'
+
 const router=createBrowserRouter([
   {
     path:'/',
@@ -37,6 +39,8 @@ const router=createBrowserRouter([
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <ThemeProvider>
+      <RouterProvider router={router}/>
+    </ThemeProvider>
   </StrictMode>,
 )

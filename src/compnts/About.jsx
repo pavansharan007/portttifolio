@@ -128,19 +128,19 @@ function About() {
   ];
 
   return (
-    <div className="bg-orange-50 min-h-screen pb-20 overflow-x-hidden">
+    <div className="bg-transparent min-h-screen pb-20 overflow-x-hidden text-cyber-textPrimary">
       <div className="max-w-7xl mx-auto px-6 pt-20 md:pt-32">
         {/* HERO SECTION */}
         <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
+          <div className="cyber-label">// MODULE: ABOUT_ME</div>
           <h1
-            className="text-7xl md:text-8xl lg:text-9xl font-medium text-black mb-8"
-            style={{ fontFamily: "Minecraft" }}
+            className="text-7xl md:text-8xl lg:text-9xl font-bold text-cyber-accentGold mb-8 uppercase tracking-widest"
           >
-            About.
+            About_
           </h1>
-          <p className="max-w-7xl text-lg md:text-xl text-dirtt opacity-80 leading-relaxed border-l-4 border-dirtt pl-6">
+          <p className="max-w-7xl text-lg md:text-xl text-cyber-textSecondary font-mono leading-relaxed border-l-2 border-cyber-accentCyan pl-6 uppercase">
             I’m a passionate{" "}
-            <strong className="text-black">Full-Stack Developer</strong> who
+            <strong className="text-cyber-accentCyan">Full-Stack Developer</strong> who
             loves turning ideas into seamless digital experiences. I build
             interfaces that are both visually appealing and highly functional.
           </p>
@@ -155,13 +155,13 @@ function About() {
             variants={fadeInUp}
             className="flex items-center gap-4 mb-12"
           >
+            <span className="text-cyber-accentGold">◆</span>
             <h2
-              className="text-3xl md:text-5xl"
-              style={{ fontFamily: "Minecraft" }}
+              className="text-3xl md:text-5xl text-cyber-textPrimary font-bold uppercase tracking-widest"
             >
               Inventory
             </h2>
-            <div className="h-[2px] flex-grow bg-dirtt opacity-20"></div>
+            <div className="h-[1px] flex-grow bg-cyber-accentGold"></div>
           </motion.div>
 
           <div className="space-y-16">
@@ -171,9 +171,9 @@ function About() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  className="text-xl font-bold mb-6 text-stone-600 uppercase tracking-widest"
+                  className="text-xl font-bold mb-6 text-cyber-textSecondary font-mono uppercase tracking-widest"
                 >
-                  {cat.title}
+                  &gt; {cat.title}
                 </motion.h3>
 
                 <motion.div
@@ -188,14 +188,14 @@ function About() {
                       key={i}
                       variants={fadeInUp}
                       whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                      className="flex flex-col items-center p-6 border border-black/10 rounded-2xl bg-white/50 backdrop-blur-sm transition-shadow shadow-sm hover:shadow-xl hover:bg-white"
+                      className="cyber-card flex flex-col items-center p-6 bg-cyber-bgSecondary border-b-2 border-b-cyber-accentCyan hover:border-b-cyber-accentGold transition-all duration-300"
                     >
                       <img
                         src={skill.icon}
                         alt={skill.name}
-                        className="w-12 h-12 mb-4 object-contain"
+                        className="w-12 h-12 mb-4 object-contain filter drop-shadow-[0_0_8px_rgba(0,212,255,0.4)]"
                       />
-                      <span className="text-sm font-medium text-dirtt">
+                      <span className="text-sm font-bold text-cyber-textPrimary font-mono uppercase tracking-widest mt-2">
                         {skill.name}
                       </span>
                     </motion.div>
@@ -215,21 +215,18 @@ function About() {
             variants={fadeInUp}
             className="flex items-center gap-4 mb-20"
           >
+            <span className="text-cyber-accentGold">◆</span>
             <h2
-              className="text-3xl md:text-5xl"
-              style={{ fontFamily: "Minecraft" }}
+              className="text-3xl md:text-5xl text-cyber-textPrimary font-bold uppercase tracking-widest"
             >
               Experience Log
             </h2>
-            <div className="h-[2px] flex-grow bg-dirtt opacity-20"></div>
+            <div className="h-[1px] flex-grow bg-cyber-accentGold"></div>
           </motion.div>
 
           <div className="relative">
-            {/* THE CONNECTING LINE 
-              Mobile: Fixed to the left (left-4)
-              Desktop: Centered (md:left-1/2)
-            */}
-            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-[3px] bg-dirtt opacity-30"></div>
+            {/* THE CONNECTING LINE */}
+            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-[1px] bg-cyber-border"></div>
 
             <div className="space-y-16 md:space-y-24">
               {educations.map((edu, index) => (
@@ -243,42 +240,38 @@ function About() {
                     index % 2 === 0 ? "md:flex-row-reverse" : ""
                   }`}
                 >
-                  {/* TIMELINE NODE (DOT)
-                    Mobile: Fixed to the line on the left
-                    Desktop: Centered on the line
-                  */}
-                  <div className="absolute left-[10px] md:left-1/2 transform md:-translate-x-1/2 w-5 h-5 bg-[#f1902f] rounded-full border-4 border-orange-50 z-20 shadow-sm"></div>
+                  {/* TIMELINE NODE (DOT) */}
+                  <div className="absolute left-[8px] md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-cyber-bgPrimary border-2 border-cyber-accentGold z-20 shadow-[0_0_8px_rgba(245,166,35,0.6)]"></div>
 
                   {/* Content Card */}
                   <div className="w-full md:w-[45%] pl-12 md:pl-0">
-                    <div className="group overflow-hidden border-2 border-black rounded-[2rem] bg-white shadow-sm hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300">
+                    <div className="cyber-card group overflow-hidden border-b-[3px] border-b-cyber-accentGreen hover:shadow-[0_0_20px_rgba(0,255,136,0.15)] transition-all duration-300">
                       {/* Image Header */}
-                      <div className="h-40 md:h-48 w-full overflow-hidden bg-stone-200">
+                      <div className="h-40 md:h-48 w-full overflow-hidden bg-cyber-bgTertiary border-b border-cyber-border">
                         <img
                           src={edu.image}
                           alt={edu.name}
-                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                          className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100"
                         />
                       </div>
 
                       <div className="p-6 md:p-8">
                         <div className="mb-4">
                           <span
-                            className="inline-block px-4 py-1 bg-[#f1902f] text-black text-[10px] font-bold uppercase tracking-widest rounded-full"
-                            style={{ fontFamily: "Minecraft" }}
+                            className="inline-block px-3 py-1 bg-cyber-bgTertiary border border-cyber-border text-cyber-accentCyan text-xs font-mono uppercase tracking-widest"
                           >
                             {edu.year}
                           </span>
                         </div>
-                        <h4 className="text-xl md:text-2xl font-black mb-1 text-black uppercase">
+                        <h4 className="text-xl md:text-2xl font-bold mb-1 text-cyber-textPrimary uppercase tracking-widest">
                           {edu.type}
                         </h4>
-                        <p className="text-dirtt font-medium mb-4 italic opacity-80">
+                        <p className="text-cyber-textSecondary font-mono text-sm mb-4 uppercase">
                           {edu.name}
                         </p>
 
-                        <div className="flex items-center gap-2 text-xs font-bold text-stone-500 uppercase tracking-tighter">
-                          <IoLocationOutline className="w-6 h-6 text-[#f1902f]" />
+                        <div className="flex items-center gap-2 text-xs font-mono text-cyber-textSecondary uppercase tracking-widest">
+                          <IoLocationOutline className="w-5 h-5 text-cyber-accentGold" />
                           {edu.location}
                         </div>
                       </div>

@@ -13,7 +13,7 @@ const Textarea = React.forwardRef(function Textarea({
       {label && (
         <label
           htmlFor={id}
-          className="inline-block mb-1 pl-1 text-white"
+          className="cyber-label"
         >
           {label}
         </label>
@@ -22,7 +22,7 @@ const Textarea = React.forwardRef(function Textarea({
         id={id}
         ref={ref}
         rows={rows}
-        className={`px-3 py-2 rounded-lg bg-orange-50 outline-none  duration-200 border border-sand w-full resize-none ${className}`}
+        className={`cyber-input w-full resize-none ${className}`}
         {...props}
       />
     </div>

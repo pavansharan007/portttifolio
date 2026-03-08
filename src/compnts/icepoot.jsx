@@ -15,8 +15,7 @@ function Icepoot() {
 
   
   // Modern SaaS styling using your existing palette
-  const inputBase =
-    "bg-orange-50 border-2 border-black rounded-xl text-dirtt placeholder:text-stone-400 focus:bg-orange-50 focus:ring-2 focus:ring-[#f1902f] transition-all duration-200 py-3 px-4";
+  const inputBase = "py-3 px-4 cyber-input font-mono text-sm tracking-widest placeholder:text-cyber-textSecondary/50 bg-cyber-bgTertiary";
 
   return (
     <div className="w-full">
@@ -24,8 +23,8 @@ function Icepoot() {
         {/* Row 1: Name and Email */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col">
-            <label className="text-xs font-bold uppercase mb-1 ml-1 text-dirtt opacity-70">
-              Your Name
+            <label className="cyber-label">
+              &gt; Your Name
             </label>
             <Input
               placeholder="Steve / Alex"
@@ -40,8 +39,8 @@ function Icepoot() {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-xs font-bold uppercase mb-1 ml-1 text-dirtt opacity-70">
-              Mail-Id
+            <label className="cyber-label">
+              &gt; Mail-Id
             </label>
             <Input
               type="email"
@@ -59,8 +58,8 @@ function Icepoot() {
 
         {/* Phone Number */}
         <div className="flex flex-col">
-          <label className="text-xs font-bold uppercase mb-1 ml-1 text-dirtt opacity-70">
-            Phone Number
+          <label className="cyber-label">
+            &gt; Phone Number
           </label>
           <Input
             type="tel"
@@ -81,8 +80,8 @@ function Icepoot() {
 
         {/* Message Content */}
         <div className="flex flex-col">
-          <label className="text-xs font-bold uppercase mb-1 ml-1 text-dirtt opacity-70">
-            Your Content
+          <label className="cyber-label">
+            &gt; Your Content
           </label>
           <Textarea
             placeholder="What's on your mind?"
@@ -96,14 +95,14 @@ function Icepoot() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full md:w-auto min-w-[200px] flex items-center justify-center gap-3 bg-[#f1902f] border-2 border-black text-black font-bold py-3 px-8 rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:scale-95 disabled:opacity-50"
+            className="cyber-btn-primary w-full md:w-auto min-w-[200px] flex items-center justify-center gap-3 py-3 px-8 text-lg tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <Loader2 className="w-5 h-5 animate-spin" />
             ) : (
               <>
-                <span className="text-lg" style={{ fontFamily: "Minecraft" }}>
-                  Submit 
+                <span className="tracking-widest">
+                  TRANSMIT 
                 </span>
                 <Send className="w-5 h-5" />
               </>

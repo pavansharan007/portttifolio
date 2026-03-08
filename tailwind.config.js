@@ -11,6 +11,7 @@ module.exports = withMT({
       
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        mono: ['Courier New', 'JetBrains Mono', 'monospace'],
       },
       colors: {
         "orange-40": "#FFFDFA",
@@ -20,6 +21,16 @@ module.exports = withMT({
         stone: "#7D7D7D",
         charcoal: "#2B2B2B",
         sand:"#D6C285",
+        "cyber-bgPrimary": "var(--bg-primary)",
+        "cyber-bgSecondary": "var(--bg-secondary)",
+        "cyber-bgTertiary": "var(--bg-tertiary)",
+        "cyber-border": "var(--border-color)",
+        "cyber-accentGold": "var(--accent-gold)",
+        "cyber-accentCyan": "var(--accent-cyan)",
+        "cyber-accentGreen": "var(--accent-green)",
+        "cyber-accentRed": "var(--accent-red)",
+        "cyber-textPrimary": "var(--text-primary)",
+        "cyber-textSecondary": "var(--text-secondary)",
         vercel: {
           bg: "#000", // your default
           color1: "#111", // component default

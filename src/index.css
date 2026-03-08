@@ -2,18 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    /* Light Mode Palette (Default if no class is present, but overridden by explicitly toggling to light) */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-tertiary: #e2e8f0;
+    --border-color: #cbd5e1;
+    --accent-gold: #d97706; /* Darker gold for text readability */
+    --accent-cyan: #0284c7; /* Darker cyan */
+    --accent-green: #16a34a;
+    --accent-red: #dc2626;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+  }
+
+  .dark {
+    --bg-primary: #0a0e1a;
+    --bg-secondary: #0f1520;
+    --bg-tertiary: #141c2e;
+    --border-color: #1e2d45;
+    --accent-gold: #f5a623;
+    --accent-cyan: #00d4ff;
+    --accent-green: #00ff88;
+    --accent-red: #ff4444;
+    --text-primary: #ffffff;
+    --text-secondary: #8899aa;
+  }
+}
+
 @font-face {
   font-family: 'Minecraft';
   src: url('/fonts/Minecraft.ttf') format('truetype');
   font-weight:lighter;
-  
 }
 
 body {
-  @apply font-poppins;
+  @apply font-poppins bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300;
 }
 
 html, body {
   overflow-x: hidden;
 }
 
+/* Custom Cyberpunk classes */
+.cyber-card {
+  @apply bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-sm shadow-[0_0_20px_rgba(0,212,255,0.05)];
+}
+
+.cyber-input {
+  @apply bg-[var(--bg-tertiary)] border border-[var(--border-color)] text-[var(--text-primary)] rounded-sm focus:border-[var(--accent-gold)] focus:ring-0 outline-none transition-all duration-200 focus:shadow-[0_0_8px_rgba(245,166,35,0.4)];
+}
+
+.cyber-label {
+  @apply uppercase text-[var(--text-secondary)] tracking-widest text-[11px] font-mono mb-1 inline-block;
+}
+
+.cyber-btn-primary {
+  @apply bg-[var(--accent-gold)] text-[var(--bg-primary)] uppercase rounded-sm border-0 font-bold hover:brightness-110 hover:shadow-[0_0_8px_rgba(245,166,35,0.4)] transition-all duration-200;
+}
+
+.cyber-btn-secondary {
+  @apply bg-transparent border border-[var(--accent-gold)] text-[var(--accent-gold)] uppercase rounded-sm font-bold hover:brightness-110 hover:shadow-[0_0_8px_rgba(245,166,35,0.4)] transition-all duration-200;
+}
+
+/* Base Headings */
+h1, h2, h3, h4, th {
+  @apply uppercase tracking-[0.1em];
+}
